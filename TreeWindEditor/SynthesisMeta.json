@@ -1,0 +1,13 @@
+{
+  "Nickname": "TreeWindEditor",
+  "Visibility": "Visible",
+  "OneLineDescription": "Patcher to edit Tree CNAM records by user configurable multipliers.",
+  "LongDescription": "Patcher to edit Tree CNAM records by user configurable multipliers.",
+  "PreferredAutoVersioning": "Default",
+  "RequiredMods": [],
+  "TargetedReleases": [
+    "SkyrimSE",
+    "SkyrimVR",
+    "SkyrimSEGog"
+  ]
+}
