@@ -110,36 +110,52 @@ namespace TreeWindEditor
                 patchedTree.TrunkFlexibility *= _settings.Value.TrunkFlexibilityMult;
 
                 // Make sure we haven't gone too low if the multiplier is > 1 and if it is, remove it
-                if (Math.Abs(patchedTree.TrunkFlexibility - tree.Record.TrunkFlexibility) < 0.001f)
+                if (_settings.Value.TrunkFlexibilityMult != 1.0f)
                 {
-                    state.PatchMod.Remove(patchedTree);
+                    if (Math.Abs(patchedTree.TrunkFlexibility - tree.Record.TrunkFlexibility) < 0.001f)
+                    {
+                        Console.WriteLine("Skipping " + patchedTree.EditorID!.ToString() + " as Trunk Flexibility is too small.");
+                        state.PatchMod.Remove(patchedTree);
+                    }
                 }
 
                 // Branch Flexibility
                 patchedTree.BranchFlexibility *= _settings.Value.BranchFlexibilityMult;
 
                 // Make sure we haven't gone too low if the multiplier is > 1 and if it is, remove it
-                if (Math.Abs(patchedTree.BranchFlexibility - tree.Record.BranchFlexibility) < 0.001f)
+                if (_settings.Value.BranchFlexibilityMult != 1.0f)
                 {
-                    state.PatchMod.Remove(patchedTree);
+                    if (Math.Abs(patchedTree.BranchFlexibility - tree.Record.BranchFlexibility) < 0.001f)
+                    {
+                        Console.WriteLine("Skipping " + patchedTree.EditorID!.ToString() + " as Branch Flexibility is too small.");
+                        state.PatchMod.Remove(patchedTree);
+                    }
                 }
 
                 // Leaf Amplitude
                 patchedTree.LeafAmplitude *= _settings.Value.LeafAmplitudeMult;
 
                 // Make sure we haven't gone too low if the multiplier is > 1 and if it is, remove it
-                if (Math.Abs(patchedTree.LeafAmplitude - tree.Record.LeafAmplitude) < 0.001f)
+                if (_settings.Value.LeafAmplitudeMult != 1.0f)
                 {
-                    state.PatchMod.Remove(patchedTree);
+                    if (Math.Abs(patchedTree.LeafAmplitude - tree.Record.LeafAmplitude) < 0.001f)
+                    {
+                        Console.WriteLine("Skipping " + patchedTree.EditorID!.ToString() + " as Leaf Amplitude is too small.");
+                        state.PatchMod.Remove(patchedTree);
+                    }
                 }
 
                 // Leaf Frequency
                 patchedTree.LeafFrequency *= _settings.Value.LeafFrequencyMult;
 
                 // Make sure we haven't gone too low if the multiplier is > 1 and if it is, remove it
-                if (Math.Abs(patchedTree.LeafFrequency - tree.Record.LeafFrequency) < 0.001f)
+                if (_settings.Value.LeafFrequencyMult != 1.0f)
                 {
-                    state.PatchMod.Remove(patchedTree);
+                    if (Math.Abs(patchedTree.LeafFrequency - tree.Record.LeafFrequency) < 0.001f)
+                    {
+                        Console.WriteLine("Skipping " + patchedTree.EditorID!.ToString() + " as Leaf Frequency is too small.");
+                        state.PatchMod.Remove(patchedTree);
+                    }
                 }
 
                 Console.WriteLine("Patched " + patchedTree.EditorID!.ToString());
